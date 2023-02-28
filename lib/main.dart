@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_app/my_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        textTheme: GoogleFonts.mulishTextTheme(),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -42,7 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: GoogleFonts.merriweather(
+            fontSize: 16,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
       body: Center(
         child: Column(
