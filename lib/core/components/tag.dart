@@ -12,7 +12,7 @@ class Tag extends StatelessWidget {
       label: Text(
         title.toUpperCase(),
         style: const TextStyle(
-          fontSize: 10,
+          fontSize: 8,
           fontWeight: FontWeight.bold,
           color: MovieColors.blue2,
         ),

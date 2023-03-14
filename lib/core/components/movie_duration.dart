@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_movie_app/core/constants/movie_colors.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class Rating extends StatelessWidget {
-  final double rating;
+import '../constants/movie_colors.dart';
 
-  const Rating({super.key, required this.rating});
+class MovieDuration extends StatelessWidget {
+  final String duration;
+
+  const MovieDuration({super.key, required this.duration});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         const Icon(
-          PhosphorIcons.starFill,
-          color: MovieColors.yellow,
+          PhosphorIcons.clock,
+          color: MovieColors.black,
           size: 12.0,
         ),
         const SizedBox(width: 4),
         Text(
-          "$rating/10 IMDb",
+          "$duration",
           style: const TextStyle(
             fontSize: 12,
-            color: MovieColors.gray1,
+            color: MovieColors.black,
           ),
         ),
       ],
