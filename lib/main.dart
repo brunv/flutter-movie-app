@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/core/components/rating.dart';
+import 'package:flutter_movie_app/core/components/tag.dart';
 import 'package:flutter_movie_app/my_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,21 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            MyWidget()
+            Rating(rating: 6.7),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
