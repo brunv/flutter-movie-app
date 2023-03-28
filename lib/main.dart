@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/core/components/movie_carousel.dart';
+import 'package:flutter_movie_app/core/components/movie_showcase.dart';
 import 'package:flutter_movie_app/core/components/rating.dart';
 import 'package:flutter_movie_app/core/components/tag.dart';
 import 'package:flutter_movie_app/my_widget.dart';
@@ -57,46 +59,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: Row(
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            Container(
-              height: 120,
-              width: 85,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Image.network(
-                  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
-                  fit: BoxFit.fill,
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 24,
+                horizontal: 0,
               ),
+              child: MovieCarousel(),
             ),
-            SizedBox(width: 16),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "The Last of Us",
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: MovieColors.black,
-                  ),
-                ),
-                SizedBox(height: 10),
-                Rating(rating: 6.7),
-                SizedBox(height: 6),
-                Row(
-                  children: [
-                    Tag(title: "Action"),
-                    SizedBox(width: 8),
-                    Tag(title: "Horror"),
-                  ],
-                ),
-                SizedBox(height: 6),
-                MovieDuration(duration: "1h 34m"),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MovieShowcase(
+                title: "The Last of Us",
+                imgSource:
+                    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+                rating: 7.9,
+                duration: "1h 23m",
+                genres: ["Horror", "Action"],
+              ),
             ),
           ],
         ),
