@@ -8,8 +8,11 @@ class Tag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text(
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      decoration: BoxDecoration(
+          color: MovieColors.blue3, borderRadius: BorderRadius.circular(50)),
+      child: Text(
         title.toUpperCase(),
         style: const TextStyle(
           fontSize: 8,
@@ -17,7 +20,6 @@ class Tag extends StatelessWidget {
           color: MovieColors.blue2,
         ),
       ),
-      backgroundColor: MovieColors.blue3,
     );
   }
 }
